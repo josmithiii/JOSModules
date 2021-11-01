@@ -1,0 +1,3 @@
+[submodule "jos_faust"]
+	path = modules/jos_faust
+	url = https://github.com/josmithiii/jos_faust
