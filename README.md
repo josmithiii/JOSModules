@@ -5,7 +5,7 @@ href="./md__Users_jos_w_320C_2021_modules_JuceModuleFormat.html">JUCE
 Module Format</a> and are intended to supplement the usual JUCE
 modules.
 
-## Available JUCE-Format Modules (contained in or submodules to this project)
+## Available Modules (typically submodules in this project)
 
 [jos_faust](https://github.com/josmithiii/jos_faust/)
 
