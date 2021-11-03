@@ -12,9 +12,27 @@ html {
     html:not(.light-mode) {
         /* define dark-mode variable overrides here if you DON'T use doxygen-awesome-darkmode-toggle.js */
         /* --primary-dark-color: #5ca8e2; */
-        --page-background-color: #0022aa;
+        --page-background-color: #001199;
         --primary-color: #5ca8f2;
-        --primary-dark-color: #ff00ff;
+        --primary-dark-color: #00559f;
+        --primary-light-color: #7aabd6;
+        --primary-lighter-color: #cae1f1;
+        --primary-lightest-color: #e9f1f8;
+
+        --code-background: #003300; /* f5f5f5 */ 
+
+        /* https://github.com/jothepro/doxygen-awesome-css/discussions/13 */
+        --fragment-background: #fdf6e3;
+        --fragment-foreground: #586e75;
+        --fragment-keyword: #cb4b16;
+        --fragment-keywordtype: #268bd2;
+        --fragment-keywordflow: #859900;
+        --fragment-token: #2aa198;
+        --fragment-comment: #657b83;
+        --fragment-link: #d33682;
+        --fragment-preprocessor: #2aa198;
+        --fragment-linenumber-color: #586e75;
+        --fragment-linenumber-background: #eee8d5;
     }
 }
 
