@@ -11,12 +11,17 @@
 
     \subsection BUG
 
-    The Modules tab in the navigation bar above, and the "Modules"
-    list inside the jos_faust module are EMPTY when you click on them.
-    This is not understood.  Incredible time was wasted carefully
-    replicating a working example (from the JUCE distribution), but it
-    never worked here.  Click on Classes or Files in the navigation
-    bar instead.  Bugfix welcome!
+    The "Modules" listed under the jos_faust module are <i>EMPTY</i>
+    when you click on them, even though doxygen doc was provided.
+    This is not understood.  They are not modules in our sense anyway;
+    they are <i>subdirectories</i> (categories) under the jos_faust
+    module. Incredible time was wasted carefully trying to replicate
+    working examples from the JUCE distribution, but nothing never
+    worked here.  Click on Classes or Files in the navigation bar
+    instead.  Doxygen is unbelievably brittle, but it's nice if you
+    can get it to work at all.  Bugfix welcome and invited!  I cannot
+    bring myself to add much more to this project until this issue is
+    resolved - it's just not motivating to build on top of garbage.
 
     \subsection Examples
 
