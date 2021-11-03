@@ -1,22 +1,24 @@
 /* custom.css */
 
-/* THESE ARE HAVING NO EFFECT (just test colors for now which would be obvious) */
+/* some are just test colors for now, to be obvious */
 
 html {
     /* define light-mode variable overrides here */
-    --primary-light-color: #ff00ff;
 }
 
+/* See ./doxygen-awesome-css/doxygen-awesome.css:182
+ */
 @media (prefers-color-scheme: dark) {
     html:not(.light-mode) {
         /* define dark-mode variable overrides here if you DON'T use doxygen-awesome-darkmode-toggle.js */
         /* --primary-dark-color: #5ca8e2; */
+        --page-background-color: #0022aa;
+        --primary-color: #5ca8f2;
         --primary-dark-color: #ff00ff;
     }
 }
 
 html.dark-mode {
     /* define dark-mode variable overrides here if you DO use doxygen-awesome-darkmode-toggle.js */
-    /* --primary-dark-color: #5ca8e2; */
-    --primary-dark-color: #ff00ff;
+    /* COPY THE ABOVE */
 }
