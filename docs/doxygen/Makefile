@@ -8,8 +8,10 @@ SOURCE_FILES := $(shell find $(MDIR) -type f -name "jos_*.h" -or -name "jos_*.do
 
 .PHONY: clean
 
-o: $(DDIR)/index.html
-	open $<
+co:
+	make clean
+	make $(DDIR)/index.html
+	open $(DDIR)/index.html
 
 $(DDIR)/index.html: $(BDIR)/jos_modules.dox Doxyfile
 	/bin/cp jos_modules.dox $(BDIR)
