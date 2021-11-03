@@ -16,6 +16,7 @@ set(Reverb_jucer_FILE
 
 set(JUCE_MODULES_GLOBAL_PATH "/l/j/modules")
 
+# set(CMAKE_CXX_STANDARD 17)
 
 jucer_project_begin(
   JUCER_FORMAT_VERSION "1"
