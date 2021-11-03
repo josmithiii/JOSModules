@@ -12,7 +12,7 @@ html {
     html:not(.light-mode) {
         /* define dark-mode variable overrides here if you DON'T use doxygen-awesome-darkmode-toggle.js */
         /* --primary-dark-color: #5ca8e2; */
-        --page-background-color: #001199;
+        --page-background-color: #001188;
         --primary-color: #5ca8f2;
         --primary-dark-color: #00559f;
         --primary-light-color: #7aabd6;
