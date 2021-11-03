@@ -12,6 +12,7 @@ o: $(DDIR)/index.html
 	open $<
 
 $(DDIR)/index.html: $(BDIR)/jos_modules.dox Doxyfile
+	/bin/cp jos_modules.dox $(BDIR)
 	doxygen
 
 $(BDIR)/jos_modules.dox: process_source_files.py $(SOURCE_FILES)
