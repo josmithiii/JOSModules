@@ -1043,7 +1043,10 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = jos_modules_mainpage.md
+USE_MDFILE_AS_MAINPAGE =
+#Fails - see Makefile also: USE_MDFILE_AS_MAINPAGE = jos_modules_mainpage.md
+#Problem may have been the wrong name (missing _mainpage in filename)
+#.dox version is fine for now, but failed attempt in ../../Archive/
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing

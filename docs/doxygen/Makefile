@@ -9,6 +9,7 @@ DDIR=doc
 DOXYGEN := doxygen
 MAINPAGE = jos_modules_mainpage.dox
 # fails: MAINPAGE = jos_modules.md
+# MOVED TO ../../Archive
 
 SOURCE_FILES := $(shell find $(MDIR) -type f \
 	-name "jos_*.h" -or -name "jos_*.dox" \
