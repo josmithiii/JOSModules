@@ -27,8 +27,10 @@ $(DDIR)/index.html: $(BDIR)/jos_modules.dox Doxyfile
 	$(DOXYGEN)
 
 $(BDIR)/jos_modules.dox: process_source_files.py $(SOURCE_FILES)
-	echo SOURCE_FILES from $(MDIR) = $(SOURCE_FILES) > /dev/null
 	python $< $(MDIR) $(BDIR)
+
+# Seems to not include juce_* !?
+#	echo SOURCE_FILES from $(MDIR) = $(SOURCE_FILES) > /dev/null
 
 i install: $(DDIR)/index.html
 	rsync -auv $(DDIR)/ ccrma-gate.stanford.edu:~jos/web/jos_modules

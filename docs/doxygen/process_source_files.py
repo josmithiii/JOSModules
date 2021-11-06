@@ -8,7 +8,7 @@ import shutil
 import re
 import argparse
 
-doPrint = 1
+doPrint = 0
 
 def mprint(*args):
     """Maybe print arguments, if doPrint is nonzero
