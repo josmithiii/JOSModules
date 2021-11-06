@@ -2630,5 +2630,5 @@ DOT_CLEANUP            = YES
 
 # https://jothepro.github.io/doxygen-awesome-css/
 
-#HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css custom.css
-HTML_EXTRA_STYLESHEET  =
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css custom.css
+#HTML_EXTRA_STYLESHEET  =
