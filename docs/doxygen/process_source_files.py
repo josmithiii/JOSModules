@@ -56,6 +56,24 @@ def remove_juce_namespaces(source):
                              + match.group(1) + " namespace")
     return source
 
+def remove_jos_namespaces(source):
+    """Return a string of source code with any jos namespaces removed.
+    """
+    namespace_regex = re.compile(r"\s+namespace\s+jos\s*{")
+
+    match = namespace_regex.search(source)
+    while (match is not None):
+        source = source[:match.start()] + source[match.end():]
+        end = get_curly_brace_scope_end(source, match.start() - 1)
+        if end != -1:
+            source = source[:end] + source[end + 1:]
+            match = namespace_regex.search(source)
+            continue
+        else:
+            raise ValueError("failed to find the end of the "
+                             + match.group(1) + " namespace")
+    return source
+
 
 def add_doxygen_group(path, group_name):
     """Add a Doxygen group to the file at 'path'.
@@ -63,6 +81,9 @@ def add_doxygen_group(path, group_name):
        The addition of juce namespacing code to all of the source files breaks
        backwards compatibility by changing the doc URLs, so we need to remove
        the namespaces.
+
+       We do the same for jos namespacing for sake of uniformity with JUCE conventions.
+
     """
 
     filename = os.path.basename(path)
@@ -72,6 +93,13 @@ def add_doxygen_group(path, group_name):
         with open(path, "w") as f:
             f.write("\r\n/** @weakgroup " + group_name + "\r\n *  @{\r\n */\r\n")
             f.write(remove_juce_namespaces(content))
+            f.write("\r\n/** @}*/\r\n")
+    if re.match(r"^jos_.*\.(h|dox)", filename):
+        with open(path, "r") as f:
+            content = f.read()
+        with open(path, "w") as f:
+            f.write("\r\n/** @weakgroup " + group_name + "\r\n *  @{\r\n */\r\n")
+            f.write(remove_jos_namespaces(content))
             f.write("\r\n/** @}*/\r\n")
 
 
@@ -98,19 +126,19 @@ if __name__ == "__main__":
 
     # Get the list of modules to include.
     if args.subdirs:
-        juce_modules = args.subdirs.split(",")
+        all_modules = args.subdirs.split(",")
     else:
-        juce_modules = []
+        all_modules = []
         for item in os.listdir(args.source_dir):
             mprint("ITEM = ",item)
             if os.path.isdir(os.path.join(args.source_dir, item)):
                 mprint(" IS A DIR")
-                juce_modules.append(item)
+                all_modules.append(item)
 
     # Copy the JUCE modules to the temporary directory, and process the source
     # files.
     module_definitions = []
-    for module_name in juce_modules:
+    for module_name in all_modules:
 
         mprint("Processing module_name ",module_name)
 
@@ -191,5 +219,5 @@ if __name__ == "__main__":
                     add_doxygen_group(filepath, group_name)
 
     # Create an extra header file containing the module hierarchy.
-    with open(os.path.join(args.dest_dir, "juce_modules.dox"), "w") as f:
+    with open(os.path.join(args.dest_dir, "all_modules.dox"), "w") as f:
         f.write("\r\n\r\n".join(module_definitions))
