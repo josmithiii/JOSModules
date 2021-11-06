@@ -9,20 +9,6 @@
 
     <a href="./group__jos__faust.html">jos_faust</a>
 
-    \subsection BUG
-
-    The "Modules" listed under the jos_faust module are <i>EMPTY</i>
-    when you click on them, even though doxygen doc was provided.
-    This is not understood.  They are not modules in our sense anyway;
-    they are <i>subdirectories</i> (categories) under the jos_faust
-    module. Incredible time was wasted carefully trying to replicate
-    working examples from the JUCE distribution, but nothing never
-    worked here.  Click on Classes or Files in the navigation bar
-    instead.  Doxygen is unbelievably brittle, but it's nice if you
-    can get it to work at all.  Bugfix welcome and invited!  I cannot
-    bring myself to add much more to this project until this issue is
-    resolved - it's just not motivating to build on top of garbage.
-
     \subsection Examples
 
     In the examples directory you will find JUCE apps which use one or
@@ -35,6 +21,11 @@
     on + at the lower right of that.  Select "Add a module from a
     specified folder", and navigate to wherever you have these modules
     on your computer, usually in a directory named modules.
+
+    \subsubsection Notes
+
+    .dox version
+
 */
 
  // For more info on \mainpage, see https://www.doxygen.nl/manual/commands.html#cmdmainpage

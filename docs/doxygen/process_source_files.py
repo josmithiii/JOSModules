@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 # Copied from the JUCE distribution 2021-10-29
+# Using in GPL mode
 
 import os
 import shutil
@@ -56,6 +57,7 @@ def remove_juce_namespaces(source):
                              + match.group(1) + " namespace")
     return source
 
+
 def remove_jos_namespaces(source):
     """Return a string of source code with any jos namespaces removed.
     """
@@ -83,7 +85,6 @@ def add_doxygen_group(path, group_name):
        the namespaces.
 
        We do the same for jos namespacing for sake of uniformity with JUCE conventions.
-
     """
 
     filename = os.path.basename(path)
@@ -219,5 +220,6 @@ if __name__ == "__main__":
                     add_doxygen_group(filepath, group_name)
 
     # Create an extra header file containing the module hierarchy.
-    with open(os.path.join(args.dest_dir, "all_modules.dox"), "w") as f:
+    with open(os.path.join(args.dest_dir, "jos_modules.dox"), "w") as f:
         f.write("\r\n\r\n".join(module_definitions))
+        mprint ("wrote ",os.path.join(args.dest_dir, "jos_modules.dox"))
