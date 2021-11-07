@@ -7,4 +7,4 @@ cmake:
 	mkdir build && cd build/ && cmake .. -GXcode && cmake --build . --parallel
 
 clean:
-	/bin/rm -rf Builds/ JuceLibraryCode/
+	/bin/rm -rf Builds/ JuceLibraryCode/ build/
