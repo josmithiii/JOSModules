@@ -20,7 +20,7 @@ html {
         --primary-dark-color: #0088CC; /* variable names - should be LIGHT because dark-mode reverses adjectives here */
         --primary-light-color: #000055; /* was 8bbee9 - border color for insets */
         --primary-lightest-color: #00FFFF; /* was e9f1f8 - drop-shadaw HIGHLIGHTING glow around selected tab etc. */
-        --primary-lighter-color: #0000FF; /* was cae1f1 - used in dark mode as narrow drop-shadow border glow */
+        --primary-lighter-color: #00CCCC; /* was cae1f1 - used in dark mode as narrow HIGHLIGHTING border glow */
         /* Doxyfile::HTML_COLORSTYLE_HUE has no effect. Colors are hard wired in doc/doxygen.css */
 
         /* https://github.com/jothepro/doxygen-awesome-css/discussions/13 */
