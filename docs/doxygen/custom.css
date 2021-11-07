@@ -21,10 +21,7 @@ html {
         --primary-light-color: #000055; /* was 8bbee9 - border color for insets */
         --primary-lightest-color: #00FFFF; /* was e9f1f8 - drop-shadaw glow around inset tab */
         --primary-lighter-color: #0000FF; /* was cae1f1 - used in dark mode as narrow drop-shadow border glow */
-        /* plain text is white and steely gray that I cannot find defined.
-           Doxyfile::HTML_COLORSTYLE_HUE has no effect. 
-           Colors are hard wired in doc/doxygen.css
-         */
+        /* Doxyfile::HTML_COLORSTYLE_HUE has no effect. Colors are hard wired in doc/doxygen.css */
 
         /* https://github.com/jothepro/doxygen-awesome-css/discussions/13 */
         --fragment-background: #fdf6e3;
