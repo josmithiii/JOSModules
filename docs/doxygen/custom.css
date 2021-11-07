@@ -17,9 +17,9 @@ html {
         --page-foreground-color: #CCCCCC; /* primary text color - 2c3e50 in doxygen-awesome.css (light mode?) */
         --page-secondary-foreground-color: #AAAAAA; /* secondary text color - 67727e in " */
         --primary-color: #5ca8f2; /* hyperlinks of any kind */
-        --primary-dark-color: #33FFFF; /* variable names - should be LIGHT because dark-mode reverses adjectives here */
+        --primary-dark-color: #0088CC; /* variable names - should be LIGHT because dark-mode reverses adjectives here */
         --primary-light-color: #000055; /* was 8bbee9 - border color for insets */
-        --primary-lightest-color: #00FFFF; /* was e9f1f8 - drop-shadaw glow around inset tab */
+        --primary-lightest-color: #00FFFF; /* was e9f1f8 - drop-shadaw HIGHLIGHTING glow around selected tab etc. */
         --primary-lighter-color: #0000FF; /* was cae1f1 - used in dark mode as narrow drop-shadow border glow */
         /* Doxyfile::HTML_COLORSTYLE_HUE has no effect. Colors are hard wired in doc/doxygen.css */
 
