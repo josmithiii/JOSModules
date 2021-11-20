@@ -919,7 +919,9 @@ INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = juce_*.h \
                          juce_*.dox \
                          jos_*.h \
-                         jos_*.dox
+                         jos_*.dox \
+                         foleys_*.h \
+                         folyes_*.dox
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.

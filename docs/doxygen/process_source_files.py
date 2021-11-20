@@ -76,6 +76,24 @@ def remove_jos_namespaces(source):
                              + match.group(1) + " namespace")
     return source
 
+def remove_foleys_namespaces(source):
+    """Return a string of source code with any foleys namespaces removed.
+    """
+    namespace_regex = re.compile(r"\s+namespace\s+foleys\s*{")
+
+    match = namespace_regex.search(source)
+    while (match is not None):
+        source = source[:match.start()] + source[match.end():]
+        end = get_curly_brace_scope_end(source, match.start() - 1)
+        if end != -1:
+            source = source[:end] + source[end + 1:]
+            match = namespace_regex.search(source)
+            continue
+        else:
+            raise ValueError("failed to find the end of the "
+                             + match.group(1) + " namespace")
+    return source
+
 
 def add_doxygen_group(path, group_name):
     """Add a Doxygen group to the file at 'path'.
@@ -101,6 +119,13 @@ def add_doxygen_group(path, group_name):
         with open(path, "w") as f:
             f.write("\r\n/** @weakgroup " + group_name + "\r\n *  @{\r\n */\r\n")
             f.write(remove_jos_namespaces(content))
+            f.write("\r\n/** @}*/\r\n")
+    if re.match(r"^foleys_.*\.(h|dox)", filename):
+        with open(path, "r") as f:
+            content = f.read()
+        with open(path, "w") as f:
+            f.write("\r\n/** @weakgroup " + group_name + "\r\n *  @{\r\n */\r\n")
+            f.write(remove_foleys_namespaces(content))
             f.write("\r\n/** @}*/\r\n")
 
 
