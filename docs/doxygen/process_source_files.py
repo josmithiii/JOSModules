@@ -8,18 +8,19 @@ import shutil
 import re
 import argparse
 
-doPrint = 0
+doPrint = 0  # turns on mprint:
 
-def mprint(*args):
+#def mprint(*args):
+def mprint(str):
     """Maybe print arguments, if doPrint is nonzero
     """
     if doPrint:
-         print (args)
-#        pstr = args[0]
-#        for s in pstr:
-#            pstr = pstr , s
-#        print (pstr)
-
+        print("mprint: " + str)
+#       print ("mprint: " + join(args))
+#       pstr = args[0]
+#       for s in pstr:
+#           pstr = pstr , s
+#       print (pstr)
 
 def get_curly_brace_scope_end(string, start_pos):
     """Given a string and a starting position of an opening brace, find the
@@ -53,7 +54,7 @@ def remove_juce_namespaces(source):
             match = namespace_regex.search(source)
             continue
         else:
-            raise ValueError("failed to find the end of the "
+            raise ValueError("failed to find the end of the juce "
                              + match.group(1) + " namespace")
     return source
 
@@ -62,6 +63,8 @@ def remove_jos_namespaces(source):
     """Return a string of source code with any jos namespaces removed.
     """
     namespace_regex = re.compile(r"\s+namespace\s+jos\s*{")
+
+    mprint("remove_jos_namespaces: looking in /" + source + "/")
 
     match = namespace_regex.search(source)
     while (match is not None):
@@ -72,6 +75,7 @@ def remove_jos_namespaces(source):
             match = namespace_regex.search(source)
             continue
         else:
+            mprint("*** Failed to find the end of the jos "+ match.group(1) + " namespace")
             raise ValueError("failed to find the end of the "
                              + match.group(1) + " namespace")
     return source
@@ -90,7 +94,7 @@ def remove_foleys_namespaces(source):
             match = namespace_regex.search(source)
             continue
         else:
-            raise ValueError("failed to find the end of the "
+            raise ValueError("failed to find the end of the foleys "
                              + match.group(1) + " namespace")
     return source
 
@@ -156,7 +160,7 @@ if __name__ == "__main__":
     else:
         all_modules = []
         for item in os.listdir(args.source_dir):
-            mprint("ITEM = ",item)
+            mprint("ITEM = " + item)
             if os.path.isdir(os.path.join(args.source_dir, item)):
                 mprint(" IS A DIR")
                 all_modules.append(item)
@@ -166,7 +170,7 @@ if __name__ == "__main__":
     module_definitions = []
     for module_name in all_modules:
 
-        mprint("Processing module_name ",module_name)
+        mprint("Processing module_name = " + module_name)
 
         # Copy the required modules.
         original_module_dir = os.path.join(args.source_dir, module_name)
@@ -237,14 +241,15 @@ if __name__ == "__main__":
 
         # Put subdirectory files into their respective groups.
         for group_name in module_groups:
-            mprint ("group_name = ",group_name)
+            mprint ("group_name = " + group_name)
             for dirpath, dirnames, filenames in os.walk(module_groups[group_name]):
-                mprint ("    dirpath = ",dirpath,", dirnames = ",dirnames, ", filenames = ",filenames)
+                # mprint ("    dirpath = ",dirpath,", dirnames = ",dirnames, ", filenames = ",filenames)
                 for filename in filenames:
                     filepath = os.path.join(dirpath, filename)
+                    mprint ("    add_doxygen_group(" + filepath + ", " + group_name + ")")
                     add_doxygen_group(filepath, group_name)
 
     # Create an extra header file containing the module hierarchy.
     with open(os.path.join(args.dest_dir, "jos_modules.dox"), "w") as f:
         f.write("\r\n\r\n".join(module_definitions))
-        mprint ("wrote ",os.path.join(args.dest_dir, "jos_modules.dox"))
+        mprint ("wrote " + os.path.join(args.dest_dir, "jos_modules.dox"))

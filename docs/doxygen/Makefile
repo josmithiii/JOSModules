@@ -11,12 +11,13 @@ MAINPAGE = jos_modules_mainpage.dox
 # fails: MAINPAGE = jos_modules.md
 # MOVED TO ../../Archive
 
-SOURCE_FILES := $(shell find $(MDIR) -type f \
-	-name "jos_*.h" -or -name "jos_*.dox" \
-	-name "juce_*.h" -or -name "juce_*.dox" \
-	| sed 's/ /\\ /g')
+SOURCE_FILES := $(shell find $(MDIR) -type f -name "jos_*.h" -or -name "jos_*.dox" | sed 's/ /\\ /g')
+#SOURCE_FILES := $(shell find $(MDIR) -type f -name "jos_*.h" -or -name "jos_*.dox" -name "juce_*.h" -or -name "juce_*.dox" -or -name "foleys_*.dox" | sed 's/ /\\ /g')
 
 .PHONY: clean
+
+o: $(DDIR)/index.html
+	open $<
 
 co:
 	make clean
@@ -28,6 +29,7 @@ $(DDIR)/index.html: $(BDIR)/jos_modules.dox Doxyfile
 	$(DOXYGEN)
 
 $(BDIR)/jos_modules.dox: process_source_files.py $(SOURCE_FILES)
+	echo SOURCE_FILES from $(MDIR) = $(SOURCE_FILES) > /dev/null
 	python $< $(MDIR) $(BDIR)
 
 # Seems to not include juce_* !?
