@@ -7,7 +7,7 @@ modules.
 
 ## Available Modules (typically submodules in this project)
 
-[jos_faust](https://github.com/josmithiii/jos_faust/)
+[josm_faust](https://github.com/josmithiii/josm_faust/)
 
 ## Adding Modules in Projucer:
 

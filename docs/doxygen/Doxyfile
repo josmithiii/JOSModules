@@ -922,8 +922,8 @@ INPUT_ENCODING         = UTF-8
 
 FILE_PATTERNS          = juce_*.h \
                          juce_*.dox \
-                         jos_*.h \
-                         jos_*.dox \
+                         josm_*.h \
+                         josm_*.dox \
                          foleys_*.h \
                          foleys_*.dox
 
@@ -2294,7 +2294,7 @@ TAGFILES               =
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       = doc/jos.tag
+GENERATE_TAGFILE       = doc/josm.tag
 
 # If the ALLEXTERNALS tag is set to YES, all external class will be listed in
 # the class index. If set to NO, only the inherited external classes will be
