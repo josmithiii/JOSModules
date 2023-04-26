@@ -1,3 +1,7 @@
 [submodule "doxygen-awesome-css"]
 	path = docs/doxygen/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
+[submodule "modules/josm_faust"]
+	path = modules/josm_faust
+	url = git@github.com:josmithiii/josm_faust.git
+	branch = main
