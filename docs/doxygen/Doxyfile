@@ -922,6 +922,8 @@ INPUT_ENCODING         = UTF-8
 
 FILE_PATTERNS          = juce_*.h \
                          juce_*.dox \
+                         jos_*.h \
+                         jos_*.dox \
                          josm_*.h \
                          josm_*.dox \
                          foleys_*.h \
