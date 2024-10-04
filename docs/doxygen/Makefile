@@ -6,6 +6,7 @@ DDIR=doc
 
 #DOXYGEN := doxygen josm_modules.config
 #DOXYGEN := doxygen Doxyfile
+#DOXYGEN := doxygen -u
 DOXYGEN := doxygen
 MAINPAGE = josm_modules_mainpage.dox
 # fails: MAINPAGE = josm_modules.md
