@@ -1009,7 +1009,8 @@ FILE_PATTERNS          = juce_*.h \
                          josm_*.h \
                          josm_*.dox \
                          foleys_*.h \
-                         foleys_*.dox
+                         foleys_*.dox \
+                         *.md
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -1039,8 +1040,9 @@ EXCLUDE_SYMLINKS       = YES
 #
 # Note that the wildcards are matched against the file with absolute path, so to
 # exclude all test directories for example use the pattern */test/*
+# [JOS 2024-10-04: EXCLUDE_SYMLINKS DOES NOT WORK, NOR DOES THE PATTERN BELOW - YOU MUST DELETE ALL UNWANTED SYMLINKS]
 
-EXCLUDE_PATTERNS       = *.dsp
+EXCLUDE_PATTERNS       = *.dsp *.symlink *.LINK
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
@@ -1157,7 +1159,7 @@ FORTRAN_COMMENT_AFTER  = 72
 # also VERBATIM_HEADERS is set to NO.
 # The default value is: NO.
 
-SOURCE_BROWSER         = NO
+SOURCE_BROWSER         = YES
 
 # Setting the INLINE_SOURCES tag to YES will include the body of functions,
 # multi-line macros, enums or list initialized variables directly into the
@@ -1408,7 +1410,7 @@ HTML_DYNAMIC_MENUS     = YES
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_DYNAMIC_SECTIONS  = NO
+HTML_DYNAMIC_SECTIONS  = YES
 
 # If the HTML_CODE_FOLDING tag is set to YES then classes and functions can be
 # dynamically folded and expanded in the generated HTML source code.
@@ -2589,7 +2591,7 @@ GROUP_GRAPHS           = NO
 # The default value is: NO.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-UML_LOOK               = NO
+UML_LOOK               = YES
 
 # If the UML_LOOK tag is enabled, the fields and methods are shown inside the
 # class node. If there are many fields or methods and many nodes the graph may
