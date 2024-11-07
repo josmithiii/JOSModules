@@ -15,7 +15,7 @@
 */
 class ReverbAudioProcessor  : public juce::AudioProcessor
 {
-  josm::Freeverb freeverb;
+  jos::Freeverb freeverb;
 
 public:
     //==============================================================================

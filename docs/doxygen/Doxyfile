@@ -1006,8 +1006,6 @@ FILE_PATTERNS          = juce_*.h \
                          juce_*.dox \
                          jos_*.h \
                          jos_*.dox \
-                         josm_*.h \
-                         josm_*.dox \
                          foleys_*.h \
                          foleys_*.dox \
                          *.md
@@ -2457,7 +2455,7 @@ TAGFILES               =
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       = doc/josm.tag
+GENERATE_TAGFILE       = doc/jos.tag
 
 # If the ALLEXTERNALS tag is set to YES, all external classes and namespaces
 # will be listed in the class and namespace index. If set to NO, only the

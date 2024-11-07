@@ -59,12 +59,12 @@ def remove_juce_namespaces(source):
     return source
 
 
-def remove_josm_namespaces(source):
-    """Return a string of source code with any josm namespaces removed.
+def remove_jos_namespaces(source):
+    """Return a string of source code with any jos namespaces removed.
     """
-    namespace_regex = re.compile(r"\s+namespace\s+josm\s*{")
+    namespace_regex = re.compile(r"\s+namespace\s+jos\s*{")
 
-    mprint("remove_josm_namespaces: looking in /" + source + "/")
+    mprint("remove_jos_namespaces: looking in /" + source + "/")
 
     match = namespace_regex.search(source)
     while (match is not None):
@@ -75,7 +75,7 @@ def remove_josm_namespaces(source):
             match = namespace_regex.search(source)
             continue
         else:
-            mprint("*** Failed to find the end of the josm "+ match.group(1) + " namespace")
+            mprint("*** Failed to find the end of the jos "+ match.group(1) + " namespace")
             raise ValueError("failed to find the end of the "
                              + match.group(1) + " namespace")
     return source
@@ -106,7 +106,7 @@ def add_doxygen_group(path, group_name):
        backwards compatibility by changing the doc URLs, so we need to remove
        the namespaces.
 
-       We do the same for josm namespacing for sake of uniformity with JUCE conventions.
+       We do the same for jos namespacing for sake of uniformity with JUCE conventions.
     """
 
     filename = os.path.basename(path)
@@ -117,12 +117,12 @@ def add_doxygen_group(path, group_name):
             f.write("\r\n/** @weakgroup " + group_name + "\r\n *  @{\r\n */\r\n")
             f.write(remove_juce_namespaces(content))
             f.write("\r\n/** @}*/\r\n")
-    if re.match(r"^josm_.*\.(h|dox)", filename):
+    if re.match(r"^jos_.*\.(h|dox)", filename):
         with open(path, "r") as f:
             content = f.read()
         with open(path, "w") as f:
             f.write("\r\n/** @weakgroup " + group_name + "\r\n *  @{\r\n */\r\n")
-            f.write(remove_josm_namespaces(content))
+            f.write(remove_jos_namespaces(content))
             f.write("\r\n/** @}*/\r\n")
     if re.match(r"^foleys_.*\.(h|dox)", filename):
         with open(path, "r") as f:
