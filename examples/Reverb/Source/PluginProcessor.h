@@ -20,11 +20,11 @@ class ReverbAudioProcessor  : public juce::AudioProcessor
 public:
     //==============================================================================
     ReverbAudioProcessor();
-    ~ReverbAudioProcessor() override;
+    virtual ~ReverbAudioProcessor() override;
 
     //==============================================================================
-    void prepareToPlay (double sampleRate, int samplesPerBlock) override;
-    void releaseResources() override;
+    virtual void prepareToPlay (double sampleRate, int samplesPerBlock) override;
+    virtual void releaseResources() override;
 
    #ifndef JucePlugin_PreferredChannelConfigurations
     bool isBusesLayoutSupported (const BusesLayout& layouts) const override;

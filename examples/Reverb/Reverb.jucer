@@ -2,7 +2,8 @@
 
 <JUCERPROJECT id="zJu0yi" name="Reverb" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              pluginFormats="buildStandalone" pluginChannelConfigs="{1,2},{2,2}">
+              pluginFormats="buildStandalone" pluginChannelConfigs="{1,2},{2,2}"
+              pluginVST3Category="Reverb" pluginAAXCategory="8192" pluginVSTCategory="kPlugCategEffect">
   <MAINGROUP id="V9qCmK" name="Reverb">
     <GROUP id="{C1A4AB9E-FAA4-0A8A-832C-9797BA700A12}" name="Source">
       <FILE id="op1u5V" name="PluginProcessor.cpp" compile="1" resource="0"
