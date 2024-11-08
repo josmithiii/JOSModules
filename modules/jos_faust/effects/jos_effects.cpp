@@ -10,3 +10,5 @@
 #endif
 
 #include "jos_effects.h"
+#include "jos_freeverb.cpp"
+#include "jos_zitarev.cpp"

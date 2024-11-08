@@ -68,8 +68,6 @@
 #include "oscillators/jos_oscillators.h"
 #include "filters/jos_filters.h"
 #include "effects/jos_effects.h"
-//#include "effects/jos_freeverb.h"
-//#include "effects/jos_zitarev.h"
 
 namespace jos
 {

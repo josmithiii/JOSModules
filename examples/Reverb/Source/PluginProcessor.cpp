@@ -26,10 +26,6 @@ ReverbAudioProcessor::ReverbAudioProcessor()
 {
 }
 
-ReverbAudioProcessor::~ReverbAudioProcessor()
-{
-}
-
 //==============================================================================
 const juce::String ReverbAudioProcessor::getName() const
 {

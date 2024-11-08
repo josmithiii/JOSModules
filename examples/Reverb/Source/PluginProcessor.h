@@ -20,7 +20,6 @@ class ReverbAudioProcessor  : public juce::AudioProcessor
 public:
     //==============================================================================
     ReverbAudioProcessor();
-    ~ReverbAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
