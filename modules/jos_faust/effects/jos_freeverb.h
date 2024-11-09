@@ -60,9 +60,6 @@ namespace jos
     */
     Freeverb(int numInChans, int numOutChans); // xtor
 
-    /** Destructor. */
-    virtual ~Freeverb();
-
     /** Ask the Faust signal-processing module how many inputs it has. */
     int getNumInputs() override { return(mNumInputs); }
 
@@ -81,7 +78,7 @@ namespace jos
     }
 
     /** Process the audio buffer along with any MIDI controls. */
-    virtual void processBlock (juce::AudioBuffer<float>& audio, juce::MidiBuffer& midi) override;
+    void processBlock (juce::AudioBuffer<float>& audio, juce::MidiBuffer& midi) override;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Freeverb)
 
