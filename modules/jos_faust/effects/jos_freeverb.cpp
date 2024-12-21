@@ -30,8 +30,6 @@ namespace jos {
 #endif
   }
 
-  Freeverb::~Freeverb() { }
-
   void Freeverb::prepareToPlay(double samplingRateHz, int maxSamplesPerBlock) {
     DBG("Freeverb: prepareToPlay(" << samplingRateHz << ")");
     jassert(samplingRateHz>0);

@@ -71,8 +71,10 @@
 
 namespace jos
 {
-  static const float PI = atanf(1.0f) * 4.0f;
-  static const float PI2 = atanf(1.0f) * 8.0f;
+  // 2024-12-21: See if we can avoid defining these:
+  // static const float PI = atanf(1.0f) * 4.0f;
+  // static const float PI2 = atanf(1.0f) * 8.0f;
+
   //#undef Complex // done by juce_audio_basics.h
   //template <typename Type>
   //using Complex = std::complex<Type>;
