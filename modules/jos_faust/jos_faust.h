@@ -71,7 +71,14 @@
 
 namespace jos
 {
-  // 2024-12-21: See if we can avoid defining these:
+  // 2024-12-21: Do not define these here because they are defined in
+  // jos_juce/util/jos_util.h and UnitTestRunner includes both
+  // /l/mfjm/jos_juce/ and JOSModules/modules/jos_faust/.  The Right Thing
+  // is for both MFModules (e.g., mfjj/modules/jos_juce/) and
+  // JOSModules (jos_faust, formerly josm_faust) to depend on
+  // JOSModules/modules/jos_core/ or JOSModules/modules/jos_util/
+  // or something like that.
+  //
   // static const float PI = atanf(1.0f) * 4.0f;
   // static const float PI2 = atanf(1.0f) * 8.0f;
 
